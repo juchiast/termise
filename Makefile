@@ -32,7 +32,7 @@ endif
 LDFLAGS := -s -Wl,--as-needed ${LDFLAGS}
 LDLIBS := ${shell pkg-config --libs ${GTK} ${VTE}}
 
-termise: termise.cc url_regex.hh util/clamp.hh util/maybe.hh util/memory.hh
+termise: termise.cc util/maybe.hh
 	${CXX} ${CXXFLAGS} ${LDFLAGS} $< ${LDLIBS} -o $@
 
 install: termise termise.desktop termise.terminfo
